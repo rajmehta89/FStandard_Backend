@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import healthRoutes from './routes/healthRoutes.js';
+import contactRoutes from './routes/contactRoutes.js';
 import errorHandler from './utils/errorHandler.js';
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/health', healthRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Root route
 app.get('/', (req, res) => {

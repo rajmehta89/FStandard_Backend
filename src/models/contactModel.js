@@ -3,7 +3,7 @@ import supabase from '../config/supabase.js';
 export const createContact = async (userId, contactData) => {
   try {
     const { data, error } = await supabase
-      .from('contacts')
+      .from('contact_messages')
       .insert({
         user_id: userId,
         name: contactData.name.trim(),
